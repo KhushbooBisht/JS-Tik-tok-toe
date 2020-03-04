@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<style>
+button{
+  height: 55px;
+  width: 9%;
+  background-color:#FF99FF;
+  font-size:50px;
+  text-align:center;
+}
+</style><center>
+<script >
+
+function check()
+{
+document.getElementById("matrix").innerHTML="";
+
+  if(a==="0"){
+  document.getElementById("matrix").innerHTML="Turn of first player";
+  }
+  else{
+  document.getElementById("matrix").innerHTML="Turn of second player";
+  }
+
+
+if(window.p==="X" && window.q==="X" && window.r==="X" || window.s==="X" && window.t==="X" && window.u==="X" ||
+window.v==="X" && window.w==="X" && window.x==="X" || window.p==="X" && window.s==="X" && window.v==="X" ||
+window.r==="X" && window.u==="X" && window.x==="X" || window.q==="X" && window.t==="X" && window.w==="X" ||
+window.p==="X" && window.t==="X" && window.x==="X" ||window.r==="X" && window.t==="X" && window.v==="X")
+{
+document.getElementById("win").innerHTML="First player is the winner";
+
+document.getElementById("1").disabled = true;
+document.getElementById("2").disabled = true;
+document.getElementById("3").disabled = true;
+document.getElementById("4").disabled = true;
+document.getElementById("5").disabled = true;
+document.getElementById("6").disabled = true;
+document.getElementById("7").disabled = true;
+document.getElementById("8").disabled = true;
+document.getElementById("9").disabled = true;
+}
+
+else if(window.p==="0" && window.q==="0" && window.r==="0" ||  window.s==="0" && window.t==="0" && window.u==="0" ||window.v==="0" && window.w==="0" && window.x==="0" || window.q==="0" && window.t=="0" && window.w==="0" ||
+ window.p==="0" && window.s==="0" && window.v==="0" || window.r==="0" && window.u==="0" && window.x==="0"||
+ window.p==="0" && window.t=="0" && window.x==="0" || window.r==="0" && window.t==="0" && window.v==="0"){
+ document.getElementById("win").innerHTML="Second player is the winner";
+ 
+ document.getElementById("1").disabled = true;
+document.getElementById("2").disabled = true;
+document.getElementById("3").disabled = true;
+document.getElementById("4").disabled = true;
+document.getElementById("5").disabled = true;
+document.getElementById("6").disabled = true;
+document.getElementById("7").disabled = true;
+document.getElementById("8").disabled = true;
+document.getElementById("9").disabled = true;
+ }
+
+else if(window.p!=="" && window.q!=="" && window.r!=="" && window.s!=="" && window.t!=="" && window.u!=="" && window.v!=="" && window.w!=="" && window.x!=="" ){
+  document.getElementById("win").innerHTML="Still no one is the winner";
+  
+ }
+ 
+else {
+document.getElementById("win").innerHTML="";
+}
+}
+
+document.addEventListener('DOMContentLoaded', function(event){check();})
+
+var a="0";
+
+function input1(event){
+  a = (a==="0") ? "X" : "0";
+  document.getElementById("1").innerHTML=a;
+  window.p=event.textContent;
+  
+
+  document.getElementById("matrix").innerHTML="";
+	setTimeout(function (){
+	check();
+	},0);
+}
+
+function input2(event){
+   a = (a==="0") ? "X" : "0";
+   document.getElementById("2").innerHTML=a;
+   window.q=event.textContent;
+   
+   document.getElementById("matrix").innerHTML="";
+   setTimeout(function (){
+   check();
+   },0);
+}
+
+function input3(event){
+   a = (a==="0") ? "X" : "0";   
+   document.getElementById("3").innerHTML=a;
+   window.r=event.textContent;
+   
+   document.getElementById("matrix").innerHTML="";
+   setTimeout(function (){
+   check();
+   },0);
+}
+
+function input4(event){
+   a = (a==="0") ? "X" : "0";
+   document.getElementById("4").innerHTML=a;
+   window.s=event.textContent;
+
+    document.getElementById("matrix").innerHTML="";
+	setTimeout(function (){
+	check();
+	},0);
+}
+
+function input5(event){
+   a = (a==="0") ? "X" : "0";
+   document.getElementById("5").innerHTML=a;
+   window.t=event.textContent;
+
+    document.getElementById("matrix").innerHTML="";
+	setTimeout(function (){
+	check();
+	},0);
+}
+
+function input6(event){
+   a = (a==="0") ? "X" : "0";
+   document.getElementById("6").innerHTML=a;
+   window.u=event.textContent;
+  
+   document.getElementById("matrix").innerHTML="";
+	setTimeout(function (){
+	check();
+	},0);
+}
+
+function input7(event){
+    a = (a==="0") ? "X" : "0";
+    document.getElementById("7").innerHTML=a;
+    window.v=event.textContent;
+    console.log(window.v);
+	
+    document.getElementById("matrix").innerHTML="";
+	setTimeout(function (){
+	check();
+	},0);
+}
+
+function input8(event){
+   a = (a==="0") ? "X" : "0";
+   document.getElementById("8").innerHTML=a;
+   window.w=event.textContent;
+   
+   document.getElementById("matrix").innerHTML="";
+   setTimeout(function (){
+   check();
+	},0);
+}
+
+function input9(event){
+   a = (a==="0") ? "X" : "0";
+   document.getElementById("9").innerHTML=a;
+   window.x=event.textContent;
+   
+   document.getElementById("matrix").innerHTML="";
+	setTimeout(function (){
+	check();
+	},0);
+}
+
+//function resete(){
+//location.reload(true);
+//}
+
+
+</script>
+
+
+<body bgcolor="#FFFFB0">
+<h1 style="font-size:50px">Tik Tak Toe</h1>
+<b><p style="font-size:20px;color:#009900" >Symbol of first player = "X"</p></b>
+<b><p style="font-size:20px;color:#009900" >Symbol of first player = "0"</p></b>
+
+<b><p id="matrix" style="font-size:30px;color:#000099" ></p></b>
+<h1  style="Color:#FF6666; font-size:70px;" id ="matrix"></h1>
+<button id="1" onClick="input1(this)"></button>
+<button id="2" onClick="input2(this)"></button>
+<button id="3" onClick="input3(this)"></button></br>
+
+<button id="4" onClick="input4(this)"></button>
+<button id="5" onClick="input5(this)"></button>
+<button id="6" onClick="input6(this)"></button></br>
+	
+<button id="7" onClick="input7(this)"></button>
+<button id="8" onClick="input8(this)"></button>
+<button id="9" onClick="input9(this)"></button></br>
+<p id ="animate"><b><p id="win" style="font-size:36px;color:#009900" ></p></b></p>
+
+
+
+<button id="1st" style= "width:25%; height:60px; background-color:#9933CC" type="reset" onClick="location.reload();">Reset</button></br></br>
+
+<!--<p style= "font-size:36px;width:12%; height:60px; background-color:#CCFF33" >Scores</p>
+<button id="1st" style= "width:30%; height:60px; background-color:#CCFF33" type="reset">First Player</button>
+<button id="1st" style= "width:30%; height:60px; background-color:#CCFF33" type="reset">Second Player</button></br>
+<button style= "width:30%;"onClick ="secondPlayer()">Second</button>
+<table><th>First Player</th><th>Second Player</th></table>-->
+
+</body></center>
+</html>
